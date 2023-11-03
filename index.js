@@ -21,16 +21,6 @@ app.get('/', (req, res) => {
 });
 
 
-app.use(function (request, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', '*');
-    //intercept the OPTIONS call so we don't double up on calls to the integration
-    if ('OPTIONS' === request.method) {
-      res.send(200);
-    } else {
-      next();
-    }
-  });
 
 
 
